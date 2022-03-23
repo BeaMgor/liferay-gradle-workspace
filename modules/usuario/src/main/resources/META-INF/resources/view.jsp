@@ -1,20 +1,31 @@
 <%@ include file="/init.jsp" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <p>	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Usuario</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-	    <div class="navbar-nav">
-	      <a class="nav-item nav-link active" href="#">Agregar <span class="sr-only">(current)</span></a>
-	      <a class="nav-item nav-link" href="#">Show</a>
-	    </div>
-	  </div>
-	</nav>
-	
+
 	<portlet:actionURL name="agregarUsuario" var="agregarUsuario"></portlet:actionURL>
+	<liferay-ui:success key="success" message="User saved successfully!"/>
+	<liferay-ui:error key="error" message="Sorry, this User Id Card is already in database" />
+	<div class="container">
+		<aui:form action="<%= agregarUsuario %>" id="frmUser" name="<portlet:namespace />fm">	
+		        <aui:fieldset>		
+		            <aui:input name="nombre" type="text" label="Nombre" required="true" style="background: white" >
+		            	<aui:validator name="maxLength">20</aui:validator>
+		            </aui:input>
+			    	<aui:input name="apellido" type="text" label="Apellido" required="true" style="background: white">
+			    		<aui:validator name="maxLength">20</aui:validator>
+		            </aui:input>
+			    	<aui:input name="dni" type="text" label="Dni" required="true" style="background: white">
+			    		<aui:validator name="maxLength">20</aui:validator>
+		            </aui:input>
+		            <aui:input name="idUsuario" type="text" label="idUsuario" required="true" style="background: white">
+			    		<aui:validator name="maxLength">20</aui:validator>
+		            </aui:input>
 		
-		
+		        </aui:fieldset>
+		        <aui:button-row>
+		            <aui:button type="submit"></aui:button>
+		            <aui:button type="reset" value="clear"/>
+		        </aui:button-row>
+		</aui:form>	
+	</div>	
 </p>

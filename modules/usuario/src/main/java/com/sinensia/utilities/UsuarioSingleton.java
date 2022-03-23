@@ -2,20 +2,36 @@ package com.sinensia.utilities;
 
 import com.sinensia.model.Usuario;
 
-import java.util.List;
 import java.util.ArrayList;
 
 public class UsuarioSingleton {
 	
-	private static ArrayList<Usuario> instancia;
+	private static UsuarioSingleton instancia;
+	private ArrayList<Usuario> lista = null;
 	
-	public static List<Usuario> getInstance() {
+	
+	public static UsuarioSingleton getInstance() {
 		
-		if (instancia != null) {
-			instancia = new ArrayList<Usuario>();
+		if (instancia == null) {
+			instancia = new UsuarioSingleton();
 		}
 		return instancia;
 	}
-	
 
+
+	private UsuarioSingleton() {
+		lista = new ArrayList<Usuario>();
+		
+	}
+
+	public ArrayList<Usuario> getLista() {
+		return this.lista;
+	}
+
+
+	public void addToArray (Usuario usuario) {
+		lista.add(usuario);
+	}
+	
+	
 }
