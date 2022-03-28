@@ -69,14 +69,6 @@ public class UsuarioPortlet extends MVCPortlet {
 		//añadimos a la array list
 		UsuarioSingleton.getInstance().addToArray(usuario);
 		
-		
-		
-		//ejercicio de un usuario solo	
-		/*actionRequest.setAttribute("nombre", nombre);
-		actionRequest.setAttribute("apellido", apellido);
-		actionRequest.setAttribute("dni", dni);*/
-		
-		
 		//redireccionamos a insertar usuario
 		actionResponse.getRenderParameters().setValue("jspPage", "/insertarUsuario.jsp");
 	}
