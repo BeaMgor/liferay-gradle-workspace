@@ -14,10 +14,30 @@
 
 package com.sinensia.business.service.impl;
 
+import com.sinensia.business.model.Libro;
+import com.sinensia.business.model.impl.LibroImpl;
 import com.sinensia.business.service.base.LibroLocalServiceBaseImpl;
 
 /**
  * @author Brian Wing Shun Chan
  */
 public class LibroLocalServiceImpl extends LibroLocalServiceBaseImpl {
+	
+	public void addNewLibro(long groupId, long companyId, long userId,
+			String userName, String nombre, String titulo, String escritor
+			) {
+			final Libro libro = new LibroImpl();
+			libro.setLibroId(counterLocalService.increment());
+			libro.setGroupId(groupId);
+			libro.setCompanyId(companyId);
+			libro.setUserId(userId);
+			libro.setUserName(userName);
+			libro.setTitulo(titulo);
+			libro.setEscritor(escritor);
+
+			addLibro(libro);
+			//Cuando hagamos un build este método se generará
+			//LibroLocalServiceUtil
+			}
+	
 }

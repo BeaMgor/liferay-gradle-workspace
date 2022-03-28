@@ -47,6 +47,15 @@ public class LibroLocalServiceWrapper
 		return _libroLocalService.addLibro(libro);
 	}
 
+	@Override
+	public void addNewLibro(
+		long groupId, long companyId, long userId, String userName,
+		String nombre, String titulo, String escritor) {
+
+		_libroLocalService.addNewLibro(
+			groupId, companyId, userId, userName, nombre, titulo, escritor);
+	}
+
 	/**
 	 * Creates a new libro with the primary key. Does not add the libro to the database.
 	 *

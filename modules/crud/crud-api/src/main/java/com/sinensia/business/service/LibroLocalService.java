@@ -77,6 +77,10 @@ public interface LibroLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public Libro addLibro(Libro libro);
 
+	public void addNewLibro(
+		long groupId, long companyId, long userId, String userName,
+		String nombre, String titulo, String escritor);
+
 	/**
 	 * Creates a new libro with the primary key. Does not add the libro to the database.
 	 *

@@ -59,6 +59,14 @@ public class LibroLocalServiceUtil {
 		return getService().addLibro(libro);
 	}
 
+	public static void addNewLibro(
+		long groupId, long companyId, long userId, String userName,
+		String nombre, String titulo, String escritor) {
+
+		getService().addNewLibro(
+			groupId, companyId, userId, userName, nombre, titulo, escritor);
+	}
+
 	/**
 	 * Creates a new libro with the primary key. Does not add the libro to the database.
 	 *
